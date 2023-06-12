@@ -32,7 +32,7 @@
 
          ?>
 
-    <a href="<?php echo base_url();?>index.php/dashboard/tambah_kegiatan">
+    <a href="<?php echo base_url();?>dashboard/tambah_kegiatan">
       <button class="btn btn-primary"><i class="fa fa-plus"></i>Tambah Kegiatan</button><br><br>
     </a>
 
@@ -152,7 +152,7 @@
                 alert("Anda tidak berhak masuk ke Control Panel Admin...!!!");
               </script>
               <?php
-              redirect('index.php/dashboard/chart');
+              redirect('dashboard/chart');
             }
         ?>
       </div>
@@ -165,33 +165,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-
-    <strong>Copyright &copy; 2017 <a href="http://caramengatasimasalahmu.blogspot.com/">Teknologi</a>.</strong> All rights
-    reserved.
-  </footer>
-
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-
-<script type="text/javascript">
-  $(document).ready( function () {
-      $('#berita').DataTable();
-  } );
-</script>
-
-
-<!-- ./wrapper -->
-<script src="<?php echo base_url();?>assets/admin/dist/js/app.min.js"></script>
-
-</body>
-
-
-</html>
-
+  <?php include'footer.php'?>
     <!-- Modal Ubah -->
 <?php 
           foreach ($sm_berita->result() as $row) {
@@ -201,7 +175,7 @@
   <div id="modal-edit<?=$row->id_berita;?>" class="modal fade">
     <div class="modal-dialog">
  
-<form action="<?php echo base_url('index.php/dashboard/edit_berita')?>" method="post">
+<form action="<?php echo base_url('dashboard/edit_berita')?>" method="post">
       <div class="modal-content">
         <div class="modal-header bg-primary">
           <button type="button" class="close" data-dismiss="modal">&times;</button>

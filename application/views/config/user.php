@@ -59,7 +59,7 @@
                 alert("Anda tidak berhak masuk ke Control Panel Admin...!!!");
               </script>
               <?php
-              redirect('index.php/dashboard');
+              redirect('dashboard');
             }
         ?>
 
@@ -114,30 +114,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      
-    </div>
-    <strong>Copyright &copy; 2017 <a href="caramengatasimasalahmu.blogspot.com">Teknologi</a>.</strong> All rights
-    reserved.
-  </footer>
-
-  <!-- Control Sidebar -->
   
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 2.2.3 -->
-
-<script src="<?php echo base_url();?>assets/admin/dist/js/app.min.js"></script>
-
-</body>
-
-
-</html>
+  <?php $this->load->view('footer.php');?>
 
  <!-- Modal hapus -->
 <?php 
@@ -148,7 +126,7 @@
   <div id="modal-hapus<?=$row->id_user;?>" class="modal fade">
     <div class="modal-dialog">
  
-<form action="<?php echo base_url();?>index.php/dashboard/proses_hapus_user/<?php echo $row->id_user; ?>" method="post">
+<form action="<?php echo base_url();?>dashboard/proses_hapus_user/<?php echo $row->id_user; ?>" method="post">
       <div class="modal-content">
         <div class="modal-header bg-primary">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -188,7 +166,7 @@
   <div id="modal-edit<?=$row->id_user;?>" class="modal fade">
     <div class="modal-dialog">
  
-<form action="<?php echo base_url('index.php/dashboard/edit_user')?>" method="post">
+<form action="<?php echo base_url('dashboard/edit_user')?>" method="post">
       <div class="modal-content">
         <div class="modal-header bg-primary">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -243,7 +221,7 @@
   <div id="modal-tambah" class="modal fade">
     <div class="modal-dialog">
  
-<form action="<?php echo base_url('index.php/dashboard/post_user')?>" method="post">
+<form action="<?php echo base_url('dashboard/post_user')?>" method="post">
       <div class="modal-content">
         <div class="modal-header bg-primary">
           <button type="button" class="close" data-dismiss="modal">&times;</button>

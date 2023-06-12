@@ -93,12 +93,11 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      
-    </div>
-    <strong>Copyright &copy; 2017 <a href="http://caramengatasimasalahmu.blogspot.com/">Teknologi</a>.</strong> All rights
-    reserved.
+
+    <strong>Copyright &copy; 2017 <a href="http://caramengatasimasalahmu.blogspot.com/">Teknologi</a>.</strong> 
+     Whatsaap IT : 089531941653
   </footer>
 
   <!-- Control Sidebar -->

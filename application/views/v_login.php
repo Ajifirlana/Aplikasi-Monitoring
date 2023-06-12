@@ -1,7 +1,7 @@
 <?php 
 
 $tgl_sekarang = date("Y");
-$tgl_exp ="2021";
+$tgl_exp ="2024";
         if ($tgl_sekarang >=$tgl_exp) {
          ?>
 
@@ -31,7 +31,7 @@ $tgl_exp ="2021";
 
     <p class="login-box-msg">Silahkan login di bawah ini.</p>
 
-    <form action="<?php echo base_url();?>index.php/login/aksi_login" method="post" enctype="multipart/form-data">
+    <form action="<?php echo base_url('login/aksi_login');?>" method="post" enctype="multipart/form-data">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="username" id="user" placeholder="Username" autofocus required="">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

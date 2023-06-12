@@ -63,24 +63,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      
-    </div>
-    <strong>Copyright &copy; 2017 <a href="https://caramengatasimasalahmu.blogspot.com/">Teknologi</a>.</strong> All rights
-    reserved.
-  </footer>
-
-  <!-- Control Sidebar -->
-  
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
-
-
+ 
+  <?php $this->load->view('footer.php');?>
 
 <!--/ Modal Tambah -->
 <div class="row">
@@ -184,5 +168,4 @@
      </div>
   </div>
 </div>
-<script src="<?php echo base_url();?>assets/admin/dist/js/app.min.js"></script>
 

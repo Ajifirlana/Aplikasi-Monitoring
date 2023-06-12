@@ -55,14 +55,14 @@ function download($id_berita= NULL)
   {
     $row = $this->db->get_where('kegiatan',['id_berita'=>$id_berita])->row();
     force_download('uploads/'.$row->image,NULL,$set_mime = FALSE);
-    redirect('index.php/dashboard/kegiatan_user');
+    redirect('dashboard/kegiatan_user');
   } 
 
 function downloadkegiatanuser($id_berita= NULL)
   {
     $row = $this->db->get_where('kegiatan_user',['id_berita'=>$id_berita])->row();
     force_download('uploads/'.$row->image,NULL,$set_mime = FALSE);
-    redirect('index.php/dashboard/laporan');
+    redirect('dashboard/laporan');
   }  
     
 
@@ -90,7 +90,7 @@ $this->form_validation->set_rules('username', 'username', 'required');
 
 if($this->form_validation->run()==FALSE){
             $this->session->set_flashdata('msg',"Data Gagal Di Edit");
-            redirect('index.php/dashboard/profile');
+            redirect('dashboard/profile');
         }else{
 $data = array(
        "username"=>$_POST['username'],
@@ -100,7 +100,7 @@ $this->db->where('id_user', $_POST['id_user']);
             $this->db->update('user',$data);
             $this->session->set_flashdata('msg', 'Profil Berhasil Di Edit');
     
-            redirect('index.php/dashboard/profile');
+            redirect('dashboard/profile');
     }
   }
 
@@ -187,7 +187,7 @@ $this->session->set_flashdata('msg',
                 <strong>Sukses!</strong> User berhasil Di Hapus.
              </div>'
            );
-  redirect('index.php/dashboard/user');
+  redirect('dashboard/user');
         }
 
 function proses_hapus_komentar($id_komentar=null){
@@ -204,7 +204,7 @@ $data['sm_komentar'] = $this->model_berita->admin_sm_komentar();
                 <strong>Sukses!</strong> Kategori berhasil dihapus.
              </div>'
            );
-  redirect('index.php/dashboard/bidangprogram');
+  redirect('dashboard/bidangprogram');
         }
 
 function proses_hapus_berita($id=''){
@@ -232,7 +232,7 @@ $this->session->set_flashdata('msg',
                 <strong>Sukses!</strong> Kegiatan berhasil dihapus.
              </div>'
            );
-  redirect('index.php/dashboard');
+  redirect('dashboard');
         }
       }
 
@@ -261,7 +261,7 @@ $this->session->set_flashdata('msg',
                 <strong>Sukses!</strong> Kegiatan berhasil dihapus.
              </div>'
            );
-  redirect('index.php/dashboard/laporan');
+  redirect('dashboard/laporan');
         }
       }
 
@@ -337,7 +337,7 @@ if (isset($_POST['btnsimpan'])) {
                        </div>'
                      );
               }
-redirect('index.php/dashboard/tambah_kegiatan');
+redirect('dashboard/tambah_kegiatan');
           }
 		}
 
@@ -406,7 +406,7 @@ if (isset($_POST['btnsimpan'])) {
                        </div>'
                      );
               }
- redirect('index.php/dashboard/tmbhkirimlaporan');
+ redirect('dashboard/tmbhkirimlaporan');
           }
         }
 
@@ -422,7 +422,7 @@ public function edit_berita()
 
         if($this->form_validation->run()==FALSE){
             $this->session->set_flashdata('error',"Data Gagal Di Edit");
-            redirect('index.php/dashboard');
+            redirect('dashboard');
         }else{
             $data=array(
                 "kategori"=>$_POST['kategori'],
@@ -434,7 +434,7 @@ public function edit_berita()
             $this->db->update('kegiatan',$data);
             $this->session->set_flashdata('message', 'Data Berhasil Di Edit');
 		
-            redirect('index.php/dashboard');
+            redirect('dashboard');
         }
     }
 
@@ -458,7 +458,7 @@ public function edit_laporanku()
              </div>'
            );
 
-redirect('index.php/dashboard/kirimlaporan');
+redirect('dashboard/kirimlaporan');
         }else{
             $data=array(
                 "created_at"=>$_POST['created_at'],
@@ -478,7 +478,7 @@ redirect('index.php/dashboard/kirimlaporan');
              </div>'
            );
 
-            redirect('index.php/dashboard/kirimlaporan');
+            redirect('dashboard/kirimlaporan');
         }
     }
 
@@ -498,7 +498,7 @@ public function edit_komentar()
                 <strong>Sukses!</strong> Data Gagal diedit.
              </div>'
            );
-            redirect('index.php/dashboard/komentar');
+            redirect('dashboard/komentar');
         }else{
             $data=array(
                 "id_komentar"=>$_POST['id_komentar'],
@@ -516,7 +516,7 @@ public function edit_komentar()
                 <strong>Sukses!</strong> Kategori berhasil diedit.
              </div>'
            );
-            redirect('index.php/dashboard/bidangprogram');
+            redirect('dashboard/bidangprogram');
         }
     }
 
@@ -532,7 +532,7 @@ public function edit_user()
      
         if($this->form_validation->run()==FALSE){
             $this->session->set_flashdata('error',"Data Gagal Di Edit");
-            redirect('index.php/dashboard');
+            redirect('dashboard');
         }else{
             $data=array(
                 "username"=>$_POST['username'],
@@ -549,7 +549,7 @@ public function edit_user()
                 <strong>Sukses!</strong> Data berhasil Di Edit.
              </div>'
            );
-            redirect('index.php/dashboard/user');
+            redirect('dashboard/user');
         }
     }
 
@@ -586,7 +586,7 @@ function post_user(){
                 <strong>Sukses!</strong> User berhasil Di Tambah.
              </div>'
            );
-        redirect('index.php/dashboard/user');
+        redirect('dashboard/user');
     }
 
 function post_bidang(){
@@ -608,7 +608,7 @@ function post_bidang(){
              </div>'
            );
         $this->model_berita->post_user($data,'databidang');
-        redirect('index.php/dashboard/bidangprogram');
+        redirect('dashboard/bidangprogram');
     }
 
 
