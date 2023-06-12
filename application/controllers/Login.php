@@ -20,24 +20,23 @@ class Login extends CI_Controller {
   }
 
   function aksi_login(){
-    $username = $this->input->post('username'); // Ambil isi dari inputan username pada form login
-    $password = md5($this->input->post('password')); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
+    $username = $this->input->post('username'); 
+    $password = md5($this->input->post('password')); 
 
-    $user = $this->m_login->get($username); // Panggil fungsi get yang ada di UserModel.php
-    
-    if(empty($user)){ // Jika hasilnya kosong / user tidak ditemukan
-      $this->session->set_flashdata('msg',
+    $user = $this->m_login->get($username); 
+    if(empty($user)){
+       $this->session->set_flashdata('msg',
                      '
                      <div class="alert alert-success alert-dismissible" role="alert">
                       
                         <strong>Username Tidak Ditemukan!</strong> '.$error.'.
                      </div>'
                    );
-     redirect('index.php/login'); // Redirect ke halaman login
+     redirect('login');
     }else{
-      if($password == $user->password){ // Jika password yang diinput sama dengan password yang didatabase
+      if($password == $user->password){ 
         $session = array(
-          'authenticated'=>true, // Buat session authenticated dengan value true
+          'authenticated'=>true,
           'username'=>$user->username,
           'id_user'=>$user->id_user,
           'kategori'=>$user->kategori,
@@ -51,7 +50,7 @@ class Login extends CI_Controller {
                         <strong>Selamat Datang Admin!</strong>'.$error.'.
                      </div>'
                    );
-        redirect('index.php/dashboard');
+        redirect('dashboard');
       }else{
         $this->session->set_flashdata('msg',
                      '
@@ -62,14 +61,14 @@ class Login extends CI_Controller {
                         Password Yang Anda Masukkan Salah!'.$error.'.
                      </div>'
                    );
-        redirect('index.php/login'); // Redirect ke halaman login
+        redirect('login'); // Redirect ke halaman login
       }
     }
 }
 
 function logout(){
     $this->session->sess_destroy(); // Hapus semua session
-        Redirect('index.php/login');
+        Redirect('login');
    }
 
 }
