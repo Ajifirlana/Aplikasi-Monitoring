@@ -1,24 +1,32 @@
-<?php 
-
-$tgl_sekarang = date("Y");
-$tgl_exp ="2025";
-        if ($tgl_sekarang >=$tgl_exp) {
-         ?>
-
-      <script type="text/javascript" language="javascript">
-                alert("Masa Berlaku Telah Habis Silahkan Hubungi Programmer...!!!");
-              </script>
-       <?php }else{?>        
-       
 <body class="hold-transition login-page">
-
-
-
+  
 <div class="login-box">
   <div class="login-logo">
    <b>Aplikasi Monitoring</b>
-    
   </div>
+<?php 
+
+$tgl_sekarang = date("Y");
+$tgl_exp ="2024";
+        if ($tgl_sekarang >=$tgl_exp) {
+         ?>
+
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <div class="login-logo" align="center">
+      <?php
+          echo $this->session->flashdata('msg');
+          ?>
+  
+
+    </div>
+
+    <p class="login-box-msg">Upgrade ke premium   <a href="https://api.whatsapp.com/send?phone=6289531941653&text=Saya%20mau%20upgrade%20Aplikasi%20Monitoring%20ke%20premium." target="_blank">Klik Disini</a>
+   </p>
+      
+  </div>
+       <?php }else{?>        
+       
   <!-- /.login-logo -->
   <div class="login-box-body">
     <div class="login-logo" align="center">
