@@ -7,7 +7,7 @@
 <?php 
 
 $tgl_sekarang = date("Y");
-$tgl_exp ="2024";
+$tgl_exp ="2025";
         if ($tgl_sekarang >=$tgl_exp) {
          ?>
 
